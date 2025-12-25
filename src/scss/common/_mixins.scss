@@ -1,0 +1,53 @@
+@use "variables" as *;
+
+@mixin mobile {
+  @media screen and (min-width: $screen-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $screen-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $screen-desktop) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin button-hover {
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+    transform: scale(1.03);
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+}
+
+@mixin button-active {
+  &:active {
+    transform: translateY(1px) scale(0.99);
+    box-shadow: $shadow-active;
+    transition: all 0.05s ease;
+  }
+}
+
+@mixin grid-auto {
+  display: grid;
+  grid-gap: 1rem;
+}

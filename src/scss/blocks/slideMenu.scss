@@ -1,0 +1,63 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.slideMenu {
+  margin: 1.5rem 1rem;
+  overflow-y: hidden;
+
+  &__item {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    &_repairBrands {
+      display: none;
+    }
+  }
+
+  &__controls {
+    display: none;
+  }
+
+  @include tablet {
+    margin: 1.5rem 1.5rem 2rem 1.5rem;
+
+    &__controls {
+      display: flex;
+      padding-top: 24px;
+    }
+  }
+
+  @include desktop {
+    margin: 0 0 8px 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &_repairDevices {
+        display: none;
+      }
+
+      &_repairBrands {
+        display: flex;
+      }
+
+      &_addresses {
+        order: 1;
+      }
+
+      &_specialPrices {
+        order: 2;
+      }
+
+      &_reviews {
+        order: 3;
+      }
+    }
+  }
+}

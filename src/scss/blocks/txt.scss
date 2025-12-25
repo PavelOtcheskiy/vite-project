@@ -1,0 +1,13 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.txt {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+
+  @include tablet {
+    line-height: 20px;
+  }
+}

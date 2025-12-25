@@ -1,0 +1,27 @@
+//возможно .active нужно добавить
+
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.containerFog {
+  display: none;
+
+  @include tablet {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all $transition;
+    visibility: hidden;
+
+    &.active {
+      display: block;
+      background-color: $color-white;
+      z-index: 10;
+      opacity: 0.96;
+      visibility: visible;
+    }
+  }
+}

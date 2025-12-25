@@ -1,0 +1,48 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.swiper {
+  margin-bottom: 24px;
+  padding-right: 16px;
+
+  &-pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+
+    &-bullet {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &-slide {
+    border-radius: 6px;
+    border: 1px solid $color-light-gray;
+    box-sizing: border-box;
+    background: $color-white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 1rem;
+    align-items: center;
+  }
+
+  &-pagination,
+  &-slide {
+    user-select: none;
+  }
+
+  @include tablet {
+    margin: 15px 0 2rem 1.5rem;
+
+    &-pagination {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    padding: 0;
+    margin: 1.5rem 0 50px 0;
+  }
+}

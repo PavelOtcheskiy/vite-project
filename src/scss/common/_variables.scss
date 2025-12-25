@@ -1,0 +1,21 @@
+$color-dark: rgba(27, 28, 33, 1);
+$color-light: rgba(248, 248, 248, 1);
+$color-transparent: rgba(248, 248, 248, 0.0001);
+$color-light-gray: rgba(234, 234, 234, 1);
+$color-gray: rgba(126, 126, 130, 1);
+$color-pink: rgba(255, 62, 121, 1);
+$color-light-green: rgba(65, 246, 215, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-light-mint: rgba(184, 255, 236, 1);
+$color-ice-mint: rgba(217, 255, 245, 1);
+
+$screen-mobile: 360px;
+$screen-tablet: 768px;
+$screen-desktop: 1366px;
+
+$transition: 0.3s linear;
+
+$shadow-modal: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+  -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+$shadow-active: 0 1px 2px rgba(0, 0, 0, 0.2);
+$shadow-side: 16px 0 52px 0 rgba(14, 24, 80, 0.2);

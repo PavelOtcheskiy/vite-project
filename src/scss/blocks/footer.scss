@@ -1,0 +1,38 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.footer {
+  border-top: 1px solid $color-ice-mint;
+  margin: 1rem;
+  @include grid-auto;
+
+  &__text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1rem;
+    letter-spacing: 0px;
+    text-align: center;
+    color: $color-gray;
+    position: relative;
+    z-index: 2;
+  }
+
+  @include tablet {
+    grid-template: 1fr / repeat(3, 1fr);
+    margin: 8px 1.5rem 1.5rem 1.5rem;
+
+    &__text {
+      &:first-child {
+        text-align: start;
+      }
+
+      &:last-child {
+        text-align: end;
+      }
+    }
+  }
+
+  @include desktop {
+    margin: 0;
+  }
+}

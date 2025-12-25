@@ -1,0 +1,39 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+body {
+  font-family: "TT Lakes";
+  color: $color-dark;
+  background: $color-light;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  @include desktop {
+    display: flex;
+  }
+
+  &::after {
+    content: "";
+    width: 24px;
+    height: 100%;
+    background: linear-gradient(
+      270deg,
+      $color-light 16.84%,
+      $color-transparent 100%
+    );
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+:root {
+  --swiper-pagination-bottom: auto;
+}

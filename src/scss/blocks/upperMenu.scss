@@ -1,0 +1,102 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.upperMenu {
+  display: flex;
+  padding: 18px 1rem;
+  background: $color-white;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 2;
+
+    &_left,
+    &_right {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &_desktop {
+      display: none;
+      gap: 2rem;
+    }
+
+    &_divider1,
+    &_call,
+    &_chat,
+    &_profile {
+      display: none;
+    }
+
+    &_divider1,
+    &_divider2 {
+      width: 2px;
+      min-height: 32px;
+      background-color: $color-light-gray;
+      align-self: center;
+      margin-inline: 4px;
+    }
+  }
+
+  @include tablet {
+    padding: 1.125rem 1.5rem;
+
+    &__item {
+      &_divider1,
+      &_call,
+      &_chat,
+      &_profile {
+        display: block;
+      }
+
+      &_divider1,
+      &_divider2 {
+        margin-inline: 2px;
+      }
+    }
+  }
+
+  @include desktop {
+    display: none;
+
+    &__item {
+      &_right {
+        float: right;
+      }
+
+      &_repair {
+        &::before {
+          content: "Оставить заявку";
+        }
+      }
+
+      &_checkstatus {
+        &::before {
+          content: "Статус ремонта";
+        }
+      }
+
+      &_repair,
+      &_checkstatus {
+        display: flex;
+        align-items: center;
+        background: transparent;
+
+        &::before {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: -0.2px;
+          padding-right: 9px;
+        }
+      }
+
+      &_desktop {
+        display: flex;
+      }
+    }
+  }
+}

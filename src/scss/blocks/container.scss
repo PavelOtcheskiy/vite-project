@@ -1,0 +1,11 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+@include desktop {
+  .container {
+    @include flex-column;
+    flex: 1;
+    position: relative;
+    padding: 42px 30px 21px 30px;
+  }
+}

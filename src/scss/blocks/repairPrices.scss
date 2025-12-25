@@ -1,0 +1,168 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.repairPrices {
+  &__slideMenu {
+    padding-bottom: 0;
+
+    &_services {
+      @include grid-auto;
+      grid-template: 200px / repeat(5, 260px);
+      padding-left: 8px;
+    }
+  }
+
+  &__info {
+    &_btn {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      width: 192px;
+      text-align: left;
+      margin: 0 1rem 2.5rem 1rem;
+      @include button-active;
+
+      &:hover,
+      &:focus {
+        color: $color-gray;
+      }
+
+      img {
+        padding-left: 6px;
+        vertical-align: middle;
+      }
+    }
+
+    &_text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      padding: 1rem;
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__item {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+    border: 0;
+
+    &_price {
+      align-self: center;
+    }
+
+    &_term {
+      display: flex;
+      justify-content: space-between;
+      align-self: end;
+    }
+
+    &_label {
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+  }
+
+  &__list_label,
+  &__item_label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1rem;
+    letter-spacing: 0px;
+    color: $color-gray;
+  }
+
+  @include tablet {
+    &__info {
+      margin: 1.5rem 1.5rem 2rem 1.5rem;
+
+      &_text {
+        padding: 0 0 16px 0;
+        width: 58.5%;
+      }
+
+      &_btn {
+        margin: 0 0 48px 0;
+        width: 316px;
+      }
+    }
+
+    &__item {
+      grid-template: 64px / 348px 74px 220px;
+
+      &_label {
+        display: none;
+      }
+
+      &:not(:first-child) {
+        border-top: 1px solid $color-light-gray;
+      }
+
+      &_service,
+      &_price,
+      &_term,
+      &_labelText,
+      &_labePrice {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+        align-self: center;
+      }
+    }
+
+    &__label {
+      grid-template: 48px / 348px 74px 220px;
+    }
+
+    &__label,
+    &__item {
+      display: grid;
+      align-items: center;
+      padding: 0;
+      margin: 0 1rem;
+      justify-content: space-between;
+      width: auto;
+    }
+
+    &__table {
+      display: grid;
+      background: $color-white;
+      border-radius: 6px;
+    }
+
+    &__slideMenu {
+      &_services {
+        grid-template: 0.75fr 5fr / 1fr;
+        padding: 0;
+        grid-gap: 0;
+        margin: 15px 24px 24px 24px;
+      }
+    }
+  }
+
+  @include desktop {
+    &__info {
+      margin: 0 0 51px 0;
+
+      &_text {
+        width: 39.72%;
+      }
+
+      &_btn {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__slideMenu {
+      &_services {
+        margin: 1rem 0 2rem 0;
+      }
+    }
+  }
+}

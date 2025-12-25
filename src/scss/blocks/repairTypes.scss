@@ -1,0 +1,57 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.repairTypes {
+  &__slideMenu {
+    &_services {
+      padding: 1rem 0 1rem 1rem;
+      @include grid-auto;
+      grid-template: 160px / repeat(11, 240px);
+    }
+
+    &_text {
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+    }
+
+    &_item {
+      align-items: start;
+      padding: 1rem;
+
+      a {
+        align-self: flex-end;
+      }
+    }
+
+    @include tablet {
+      &_services {
+        grid-template: 160px / repeat(3, 224px);
+        grid-gap: 1rem 1.5rem;
+        padding: 0;
+        justify-content: center;
+
+        &.show-all {
+          grid-template: repeat(4, 160px) / repeat(3, 224px);
+        }
+      }
+    }
+
+    @include desktop {
+      &_services {
+        grid-template: 160px / repeat(4, 240px);
+        grid-gap: 1rem 2rem;
+
+        &.show-all {
+          grid-template: repeat(3, 160px) / repeat(4, 240px);
+        }
+      }
+
+      &_item {
+        &:nth-child(4) {
+          display: flex;
+        }
+      }
+    }
+  }
+}

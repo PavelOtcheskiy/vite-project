@@ -1,0 +1,18 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+@include tablet {
+  .hidden768 {
+    display: none;
+  }
+
+  .show-all {
+    .hidden768 {
+      display: flex;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

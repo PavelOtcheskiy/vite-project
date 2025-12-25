@@ -1,0 +1,40 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.title {
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  color: $color-gray;
+  background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 98.61%);
+  padding: 1rem 0 1rem 1rem;
+  user-select: none;
+
+  &__paragraph {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      min-height: 40px;
+      position: absolute;
+      left: 0;
+      background-color: $color-light-green;
+      border-radius: 0 2px 2px 0;
+    }
+  }
+
+  @include tablet {
+    padding: 1rem 24px;
+  }
+
+  @include desktop {
+    padding: 1rem 0;
+    margin-right: -30px;
+  }
+}

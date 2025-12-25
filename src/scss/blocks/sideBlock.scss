@@ -1,0 +1,183 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.sideBlock {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: $color-white;
+  position: fixed;
+  z-index: 11;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  transition: left $transition;
+
+  &.clicked {
+    left: 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 29px 37px 22px;
+
+    &_left {
+      display: flex;
+      gap: 16.73px;
+      align-items: center;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2rem 1rem;
+    height: 364px;
+    justify-content: space-between;
+
+    &_item {
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: $color-dark;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      @include button-active;
+
+      &:hover,
+      &:focus {
+        color: $color-gray;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 3.83px;
+          min-height: 28.31px;
+          position: absolute;
+          left: -1rem;
+          background-color: $color-light-green;
+          border-radius: 0 2px 2px 0;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    height: 124px;
+    justify-content: space-between;
+
+    &_email {
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: $color-dark;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    &_phone {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      text-decoration: none;
+      color: $color-dark;
+    }
+  }
+
+  &__bottomNav {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__langList {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 19px;
+    gap: 0.5rem;
+  }
+
+  @include mobile {
+    &__header {
+      margin: 19px 1.5rem 26px 1.5rem;
+    }
+
+    &__menu {
+      margin: 0 0 2rem 1.5rem;
+
+      &_item {
+        &:hover,
+        &:focus {
+          &::before {
+            left: -1.5rem;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      margin-left: 1.5rem;
+    }
+  }
+
+  @include tablet {
+    width: 320px;
+    box-shadow: $shadow-side;
+
+    &__header {
+      margin-bottom: 46px;
+    }
+
+    &__menu {
+      height: 368px;
+      margin-bottom: 268px;
+    }
+
+    &__footer {
+      gap: 40px;
+    }
+  }
+
+  @include desktop {
+    box-shadow: none;
+    position: static;
+    z-index: 10;
+
+    &__header {
+      margin: 30px 29px 37px 22px;
+
+      &_burger {
+        display: none;
+      }
+    }
+
+    &__contacts {
+      height: 128px;
+    }
+
+    &__footer {
+      margin-left: 19px;
+    }
+
+    &__menu {
+      margin-bottom: 240px;
+    }
+  }
+}

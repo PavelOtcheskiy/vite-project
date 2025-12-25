@@ -1,0 +1,116 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.content {
+  @include flex-column;
+
+  &__text {
+    @include flex-column;
+    justify-content: space-between;
+    margin: 0 1rem 1rem 1rem;
+    gap: 1rem;
+
+    &_second,
+    &_third {
+      display: none;
+    }
+
+    &_second-part {
+      padding: 0;
+    }
+  }
+
+  &__controls {
+    display: flex;
+
+    &_readMoreBtn {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url("../img/icons/arrows.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 9px;
+      }
+
+      &.hide {
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-gray;
+      }
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    border-radius: 2px;
+  }
+
+  @include tablet {
+    margin: 1.5rem 1.5rem 2rem 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__text {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 43.34%;
+      margin: 0;
+
+      &_second {
+        display: block;
+
+        &-part {
+          display: none;
+        }
+      }
+    }
+
+    &__picture {
+      width: 50%;
+      height: fit-content;
+      border-radius: 6px;
+    }
+
+    &__controls {
+      position: relative;
+      top: -6px;
+    }
+  }
+
+  @include desktop {
+    margin: 0 0 51px 0;
+
+    &__picture {
+      width: 48.48%;
+      border-radius: 6px;
+    }
+
+    &__text {
+      width: 44.71%;
+      padding-top: 9px;
+
+      &_second-part {
+        display: inline;
+      }
+    }
+  }
+}

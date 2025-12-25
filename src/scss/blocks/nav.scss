@@ -1,0 +1,28 @@
+@use "/src/scss/common/variables" as *;
+@use "/src/scss/common/mixins" as *;
+
+.nav {
+  display: flex;
+  font-weight: 500;
+  line-height: 24px;
+  height: 40px;
+  letter-spacing: -0.2px;
+  color: $color-gray;
+  text-decoration: none;
+  align-items: center;
+  padding: 0px 14px;
+  border: $color-light 2px solid;
+
+  @include button-active;
+
+  &:hover,
+  &:focus {
+    border: 2px solid $color-light-mint;
+    background-color: $color-white;
+    border-radius: 6px;
+  }
+
+  @include desktop {
+    padding-inline: 20px;
+  }
+}
